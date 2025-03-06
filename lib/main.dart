@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduationproject/ui/Home/homeScreen.dart';
-
+import 'package:graduationproject/ui/Home/tabs/newsScreen.dart';
 import 'package:graduationproject/ui/splashScreen.dart';
 
 void main() {
@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(initialRoute: splashScreen.routeName, routes: {
       splashScreen.routeName: (context) => splashScreen(),
-      homeScreen.routeName: (context) => homeScreen()
+      homeScreen.routeName: (context) => homeScreen(),
+      newsScreen.routeName: (context) => newsScreen()
     });
   }
 }

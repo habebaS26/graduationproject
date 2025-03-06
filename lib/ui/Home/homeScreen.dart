@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:graduationproject/ui/Home/tabs/accScreen.dart';
+import 'package:graduationproject/ui/Home/tabs/fbScreen.dart';
+import 'package:graduationproject/ui/Home/tabs/newsScreen.dart';
+import 'package:graduationproject/ui/Home/tabs/notificationScreen.dart';
+import 'package:graduationproject/ui/Home/tabs/umsScreen.dart';
 
 class homeScreen extends StatefulWidget {
   static const routeName = 'homeScreen';
@@ -11,6 +16,13 @@ class homeScreen extends StatefulWidget {
 
 class _homeScreenState extends State<homeScreen> {
   int selectind = 2;
+  var tabs = [
+    fbScreen(),
+    umsScreen(),
+    newsScreen(),
+    accScreen(),
+    notificationsScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -123,7 +135,7 @@ class _homeScreenState extends State<homeScreen> {
           ),
         ),
       ),
-      body: Container(color: Colors.red),
+      body: tabs[selectind],
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(canvasColor: Color(0xff143109)),
         child: BottomNavigationBar(
@@ -140,7 +152,10 @@ class _homeScreenState extends State<homeScreen> {
                 icon: Icon(Icons.facebook_sharp), label: 'Facebook'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_balance_sharp), label: 'Ums'),
-            BottomNavigationBarItem(icon: Icon(Icons.newspaper), label: 'News'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.newspaper),
+              label: 'News',
+            ),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined), label: 'Account'),
             BottomNavigationBarItem(
